@@ -10,43 +10,69 @@ This document provides the overview of our project, containing the description o
 
 ------
 
-### Data
+### DATA
 
 (Assigned: Abdul Ahad Ayaz)
 
-The dataset that we are going to use for our project can be found [here.](https://www.kaggle.com/headsortails/covid19-tracking-germany) It consists of two csv files i.e. **covid_de.csv** and **demgraphics_de.csv.**  This dataset provides the time series (updated everday) data related to Covid-19 in different states of Germany. The reason of using this dataset is thats it satisfies the requirement of our User and Tasks. The first file **covid_de.csv** consist of following columns:
+There are two datasets that we are going to use **covid_de.csv** and **demgraphics_de.csv**. First dataset **covid_de.csv** provides the daily update of Covid-19 cases of different states and counties of Germany based on gender and age group. Second dataset **demgraphics_de.csv** is the supporting dataset for the first dataset as it contains the population of different states of Germany based on gender and age group. The reason of choosing these dataset upon other dataset is that it satisfies the requirement of End User described below.
 
-| Column Name   | Description                                                  |
-| ------------- | ------------------------------------------------------------ |
-| **state**     | It contains the name of German states that are total 16 in number. Example Baden-Wuerttemberg, Nordrhein-Westfalen, Hessen, Bayern etc. |
-| **country**   | It contains the name of counties of each state label with LandKries(LK)/StadtKries(SK). Example SK Koeln, SK Hamm, LK Paderborn, LK Guetersloh in Nordrhein-Westfalen state. |
-| **age_group** | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79, 80-99 and empty field NA with age unknown. |
-| **gender**    | it consist of gender M for male and F for female and NA for gender unknown. |
-| **date**      | it consist of date when the data is updated                  |
-| **cases**     | it consist of per day count of confirmed cases of Covid-19   |
-| **deaths**    | it consits of per day count of death due to Covid-19         |
-| **recovered** | it consists of per day count of recovered patients from Covid-19 |
+##### Data Source
 
-The Second file **demographics_de.csv** that we are going to use for our project consist of following columns:
+- **covid_de.csv**
+  - https://www.kaggle.com/headsortails/covid19-tracking-germany (covid_de.csv is refined dataset based on RKI data)
+  - https://npgeo-corona-npgeo-de.hub.arcgis.com (Collected by [Robert Koch Institute](https://www.rki.de/EN/Home/homepage_node.html))
+- **demographic_de.csv**
+  - https://www-genesis.destatis.de/genesis/online/data?operation=sprachwechsel&language=en (Collected by [Statistisches Bundesamt](https://www.destatis.de/EN/Home/_node.html))
 
-| Column Name    | Description                                                  |
-| -------------- | ------------------------------------------------------------ |
-| **state**      | It contains the name of German states that are total 16 in number. Example Baden-Wuerttemberg, Nordrhein-Westfalen, Hessen, Bayern etc. |
-| **gender**     | t consist of gender such as male and female                  |
-| **age_group**  | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79 and 80-99 |
-| **population** | It consists of population categorized by state, gender and age. |
+##### Dataset Type
+
+| Dataset                | Spatial vs Non-Spatial Data | Point, Scalar, Vector Data |
+| ---------------------- | --------------------------- | -------------------------- |
+| **covid_de.csv**       | Non-Spatial Data            | Point Data                 |
+| **demographic_de.csv** | Non-Spatial Data            | Point Data                 |
+
+##### Dataset Characteristics
+
+The first dataset **covid_de.csv** consist of following columns:
+
+| Column Name   | Data    Type | Description                                                  |
+| ------------- | ------------ | ------------------------------------------------------------ |
+| **state**     | Nominal      | It contains the name of German states that are total 16 in number. Example Baden-Wuerttemberg, Nordrhein-Westfalen, Hessen, Bayern etc. |
+| **county**    | Nominal      | It contains the name of counties of each state label with LandKries(LK)/StadtKries(SK). Example SK Koeln, SK Hamm, LK Paderborn, LK Guetersloh in Nordrhein-Westfalen state. |
+| **age_group** | Ordinal      | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79, 80-99 and empty field NA with age unknown. |
+| **gender**    | Ordinal      | it consist of gender M for male and F for female and NA for gender unknown. |
+| **date**      | Nominal      | it consist of date when the data is updated.                 |
+| **cases**     | Quantitative | it consist of per day count of confirmed cases of Covid-19.  |
+| **deaths**    | Quantitative | it consits of per day count of death due to Covid-19         |
+| **recovered** | Quantitative | it consists of per day count of recovered patients from Covid-19. |
+
+The Second file **demographics_de.csv** that we are going to use for our project consist of following columns: 
+
+| Column Name    | Data Type    | Description                                                  |
+| -------------- | ------------ | ------------------------------------------------------------ |
+| **state**      | Nominal      | It contains the name of German states that are total 16 in number. Example Baden-Wuerttemberg, Nordrhein-Westfalen, Hessen, Bayern etc. |
+| **gender**     | Ordinal      | It consist of gender such as male and female.                |
+| **age_group**  | Ordinal      | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79 and 80-99. |
+| **population** | Quantitative | It consists of population categorized by state, gender and age. |
+
+##### Data Modeling
+
+- **covid_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_6^P">, where P represents that dataset has Point Data and 6 represents the dimensions.
+- **demographics_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_3^P">, where P represents that dataset has Point Data and 3 represents the dimensions.
 
 
 
-### User and Task
+### USER AND TASK
 
 (Assigned: Suganthi Jaganathan)
 
-### Visualization Techniques
+
+
+### VISUALIZATION TECHNIQUES
 
 (Assigned: Bhagyashree Sanjay Borade)
 
-### Interaction
+### INTERACTIONS
 
 (Assigned: Sayalee Chavan)
 
