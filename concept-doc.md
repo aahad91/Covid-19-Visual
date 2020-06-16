@@ -14,12 +14,12 @@ This document provides the overview of our project, containing the description o
 
 (Assigned: Abdul Ahad Ayaz)
 
-The dataset that we are going to use for our project can be found [here.](https://www.kaggle.com/headsortails/covid19-tracking-germany) It consists of two csv files i.e. **covid_de.csv** and **demgraphics_de.csv.**  This dataset provides the time series (updated everday) data related to Covid-19 in different states of Germany. The first file **covid_de.csv** consist of following columns:
+The dataset that we are going to use for our project can be found [here.](https://www.kaggle.com/headsortails/covid19-tracking-germany) It consists of two csv files i.e. **covid_de.csv** and **demgraphics_de.csv.**  This dataset provides the time series (updated everday) data related to Covid-19 in different states of Germany. The reason of using this dataset is thats it satisfies the requirement of our User and Tasks. The first file **covid_de.csv** consist of following columns:
 
 | Column Name   | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
 | **state**     | It contains the name of German states that are total 16 in number. Example Baden-Wuerttemberg, Nordrhein-Westfalen, Hessen, Bayern etc. |
-| **county**    | It contains the name of counties of each state label with LandKries(LK)/StadtKries(SK). Example SK Koeln, SK Hamm, LK Paderborn, LK Guetersloh in Nordrhein-Westfalen state. |
+| **country**   | It contains the name of counties of each state label with LandKries(LK)/StadtKries(SK). Example SK Koeln, SK Hamm, LK Paderborn, LK Guetersloh in Nordrhein-Westfalen state. |
 | **age_group** | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79, 80-99 and empty field NA with age unknown. |
 | **gender**    | it consist of gender M for male and F for female and NA for gender unknown. |
 | **date**      | it consist of date when the data is updated                  |
