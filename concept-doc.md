@@ -6,7 +6,7 @@
 
 #### Members: Abdul Ahad Ayaz, Sayalee Chavan, Suganthi Jaganathan, Bhagyashree Sanjay Borade
 
-This document provides the overview of our project, containing the description of dataset, the End Users that we are targeting, visualization techniques that we are going to use and in the end how can we explore the visualized data using different intreraction techniques. 
+This document provides the overview of our project, containing the description of dataset, the End Users that we are targeting, visualization techniques that we are going to use and in the end how can we explore the visualized data using different interaction techniques. 
 
 ------
 
@@ -17,9 +17,10 @@ There are two multivariate datasets that we are going to use **covid_de.csv** an
 ##### Data Source
 
 - **covid_de.csv**
-  - https://www.kaggle.com/headsortails/covid19-tracking-germany (covid_de.csv is refined dataset based on RKI data)
+  - https://www.kaggle.com/headsortails/covid19-tracking-germany?select=covid_de.csv (covid_de.csv is refined dataset based on RKI data)
   - https://npgeo-corona-npgeo-de.hub.arcgis.com (Collected by [Robert Koch Institute](https://www.rki.de/EN/Home/homepage_node.html))
 - **demographic_de.csv**
+  - https://www.kaggle.com/headsortails/covid19-tracking-germany?select=demographics_de.csv
   - https://www-genesis.destatis.de/genesis/online/data?operation=sprachwechsel&language=en (Collected by [Statistisches Bundesamt](https://www.destatis.de/EN/Home/_node.html))
 
 ##### Dataset Type
