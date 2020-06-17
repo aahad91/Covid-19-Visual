@@ -1,12 +1,18 @@
 
-<ul>
+<<ol>
 <li>Users</li>
-Potential user would be the North-Rhine-Westphalia (NRW) State government, Germany.
-Other users or the interested ones are the education department (particularly) to colloborate with the State government in deciding upon the operation of schools and common people to know the current scenario.
-<li>Specified Tasks</li>
-User can look upon the agewise data in all the zones to monitor the children's health condition as most of the kindergartens are operating.
-User can track the root cause of the infections with respect to age and precise zone/location (if it is from schools or other causes).
-Potential user can decide upon the further regulations.
+<ul>    
+
+<li>The potential user would be the North-Rhine-Westphalia (NRW) State government, Germany</li>
+</ul>
+<li>Task</li>
+Sophisticated tasks would be,
+<ul>
+<li>To understand the current scenario in NRW for all over the state with the major details like age-group, demography, population of that particular city/town, gender, recovered and active cases ratio </li>
+<li>To determine the current scenario in NRW depending upon the age and location using covid_de.csv and demographic_de.csv respectively</li>
+<li>To monitor the children's health conditions and analyze the impact of operation of schools (Kindergarten)</li>
+<li>To decide upon the operation and further plans to open/retain schools and offices</li>
+</ul>
 
 
 
