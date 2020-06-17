@@ -12,8 +12,6 @@ This document provides the overview of our project, containing the description o
 
 ### DATA
 
-(Assigned: Abdul Ahad Ayaz)
-
 There are two multivariate datasets that we are going to use **covid_de.csv** and **demgraphics_de.csv**. First dataset **covid_de.csv** provides the daily update of Covid-19 cases of different states and counties of Germany based on gender and age group. Second dataset **demgraphics_de.csv** is the supporting dataset for the first dataset as it contains the population of different states of Germany based on gender and age group. The reason of choosing these dataset upon other dataset is that it satisfies the requirement of End User described below.
 
 ##### Data Source
@@ -64,42 +62,31 @@ The Second file **demographics_de.csv** that we are going to use for our project
 
 ### USER AND TASK
 
-(Assigned: Suganthi Jaganathan)
-<ol>
-<li>Users</li>
-<ul>
-The potential user would be the North-Rhine-Westphalia (NRW) State government, Germany
-</ul>
-<li>Task</li>
-Sophisticated tasks would be,
-<ul>
-<li>To visualize the current scenario in NRW for all over the state with the major details like age-group, demography, population of that particular city/town, gender, recovered and active cases ratio on daily basis. This provides an overview on the existing situation </li>
-<li>To visualize the infection rate in NRW with age group and location using covid_de.csv and demographic_de.csv respectively. This helps the user to track upon infections on needed location </li>
-<li>To visualize the age group, gender and active cases then highlight the age group 0 to 14. This helps the user to monitor the children's health conditions and analyze the impact of operation of schools (Kindergarten) </li>
-<li>To visulaize and highlight the increase/decrease in Covid-19 infections with respect to population, active and recovered cases. This helps the user to decide upon the operation and further plans to open/retain schools, universities malls, pubs and workplaces </li>
+##### Users
+
+The potential user would be the North-Rhine-Westphalia (NRW) State government, Germany.
+
+##### Tasks
+
+Sophisticated tasks will be:
+
+- To visualize the current scenario of Covid-19 in NRW for all over the state with the major details like age-group, demography, gender, recovered and active cases ratio on daily basis. This provides an overview on the existing situation.
+- To visualize the infection rate in NRW with age group and location using covid_de.csv and demographic_de.csv respectively. This helps the user to control the Covid-19 spread in particular county.
+- To visualize the age group, gender and active cases then highlight the age group such as "0 to 14". This helps the user to monitor the children's health conditions and analyze the impact of operation of schools (Kindergarten).
+- To visulaize and highlight the increase/decrease in Covid-19 infections with respect to population, active and recovered cases. This helps the user to decide upon the operation and further plans to open/retain schools, universities, shopping malls and workplaces.
+- Compare the current situation of Covid-19 spread of NRW with other states to make policies like lockdown etc.
+
 
 
 ### VISUALIZATION TECHNIQUES
 
-(Assigned: Bhagyashree Sanjay Borade)
+##### Techniques
 
-<ol>
-
-
-<li> Time oriented visualization technique</li> 
-
-<ul><li>Multi-series Line chart (for multivariate data)</li>
- x-axis represents "days" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).</ul>
-
-
-<li> Region-based technique</li>
-
-<ul><li>Bar chart(3D)</li>
-x-axis represents "age group" and y-axis represents "No. of cases".</ul>
-
-<ul><li>Grouped Bar chart(3D) (for multivariate data)</li>
- x-axis represents "Counties" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).</ul>
-
+- Time oriented visualization technique
+  - Multi-series Line chart (for multivariate data) : x-axis represents "days" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).
+- Region-based technique
+  - Bar chart(3D): x-axis represents "age group" and y-axis represents "No. of cases".
+  - Grouped Bar chart(3D) (for multivariate data): x-axis represents "Counties" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).
 
 <li> Scatter plot (for multivariate data)</li>
 
@@ -114,18 +101,13 @@ x-axis represents "age group" and y-axis represents "No. of cases".</ul>
 
 ### INTERACTIONS
 
-(Assigned: Sayalee Chavan)
+Interaction in visualization techniques provides more understanding of visual representation. User can do the selection, filtering for switching between different visualization techniques or choosing data variables. Interaction for visualization techniques specified as following:
 
-Interaction in visualization techniques provides more understanding of visual representation. User can do the selection, filtering for switching between different visualization techniques or choosing data variables.
-Interaction for visualization techniques specified as following:
+-  **Filtering/ Range slider:** With the use of range slider, the user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. This technique can be used in Multi-Series line chart.
+   
+-  **Selection:** Selection can be used for visualizing different data variables by selecting/unselecting legend-based checkboxes and selection would be one or multiple. This interaction operator can be used in Multi-Series Line Chart where the user can do selection based on "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". For Bar Chart(3D) and Grouped Bar Chart(3D), the user can select between Bar Chart and Grouped Bar Chart in dropdown. For Grouped Bar Chart(3D), visualization can be customized by selecting checkboxes represents "No. of confirmed cases", "No. of recovered cases" and "No. of deaths".  For Scatter plot multi-series, User can customize the visualization by selecting the checkbox in legends based on gender(male/ female). For Bubble Chart, User can customize visualization by selecting the checkbox which consists of "Total confirmed cases", "No. of recovered cases", "No. of deaths" parameters.
+   
+- **Hover:** This interactive technique reveals detailed data point information by moving the mouse cursor over data value space which will be included in all visualization techniques mentioned above. For eg, hovering on scatter data points reveals information about no of cases represented by y-axis and age group represented by x-axis.
+  
 
--  **Filtering/ Range slider:**
-   With the use of range slider, the user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. This technique can be used in Multi-Series line chart.
 
--  **Selection:**
-   Selection can be used for visualizing different data variables by selecting/unselecting legend-based checkboxes and selection would be one or multiple. This interaction operator can be used in Multi-Series Line Chart where the user can do selection based on "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". For Bar Chart(3D) and Grouped Bar Chart(3D), the user can select between Bar Chart and Grouped Bar Chart in dropdown. For Grouped Bar Chart(3D), visualization can be customized by selecting checkboxes represents "No. of confirmed cases", "No. of recovered cases" and "No. of deaths".  For Scatter plot multi-series, User can customize the visualization by selecting the checkbox in legends based on gender(male/ female). For Bubble Chart, User can customize visualization by selecting the checkbox which consists of "Total confirmed cases", "No. of recovered cases", "No. of deaths" parameters.
-
-- **Hover:**
-  This interactive technique reveals detailed data point information by moving the mouse cursor over data value space which will be included in all visualization techniques mentioned above. For eg, hovering on scatter data points reveals information about no of cases represented by y-axis and age group represented by x-axis.
-
-	

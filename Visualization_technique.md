@@ -26,3 +26,4 @@ x-axis represents "age group" and y-axis represents "No. of cases".</ul>
 
  x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases.
 </ol>
+
