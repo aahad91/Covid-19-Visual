@@ -6,7 +6,7 @@
 
 #### Members: Abdul Ahad Ayaz, Sayalee Chavan, Suganthi Jaganathan, Bhagyashree Sanjay Borade
 
-This document provides the overview of our project, containing the description of dataset, the End Users that we are targeting, visualization techniques that we are going to use and in the end how can we explore the visulaized data using different intreraction techniques. 
+This document provides the overview of our project, containing the description of dataset, the End Users that we are targeting, visualization techniques that we are going to use and in the end how can we explore the visualized data using different intreraction techniques. 
 
 ------
 
@@ -38,11 +38,11 @@ The first dataset **covid_de.csv** consist of following columns:
 | **state**     | Nominal      | It contains the name of German states that are total 16 in number. Example Baden-Wuerttemberg, Nordrhein-Westfalen, Hessen, Bayern etc. |
 | **county**    | Nominal      | It contains the name of counties of each state label with LandKries(LK)/StadtKries(SK). Example SK Koeln, SK Hamm, LK Paderborn, LK Guetersloh in Nordrhein-Westfalen state. |
 | **age_group** | Ordinal      | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79, 80-99 and empty field NA with age unknown. |
-| **gender**    | Ordinal      | it consist of gender M for male and F for female and NA for gender unknown. |
-| **date**      | Nominal      | it consist of date when the data is updated.                 |
-| **cases**     | Quantitative | it consist of per day count of confirmed cases of Covid-19.  |
-| **deaths**    | Quantitative | it consits of per day count of death due to Covid-19         |
-| **recovered** | Quantitative | it consists of per day count of recovered patients from Covid-19. |
+| **gender**    | Ordinal      | It consist of gender M for male and F for female and NA for gender unknown. |
+| **date**      | Nominal      | It consist of date when the data is updated.                 |
+| **cases**     | Quantitative | It consist of per day count of confirmed cases of Covid-19.  |
+| **deaths**    | Quantitative | It consits of per day count of death due to Covid-19         |
+| **recovered** | Quantitative | It consists of per day count of recovered patients from Covid-19. |
 
 The Second file **demographics_de.csv** that we are going to use for our project consist of following columns: 
 
@@ -55,7 +55,7 @@ The Second file **demographics_de.csv** that we are going to use for our project
 
 ##### Data Modeling
 
-- **covid_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_6^P">, where P represents that dataset has Point Data and 6 represents the dimensions.
+- **covid_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_7^P">, where P represents that dataset has Point Data and 7 represents the dimensions.
 - **demographics_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_3^P">, where P represents that dataset has Point Data and 3 represents the dimensions.
 
 
@@ -73,31 +73,29 @@ Sophisticated tasks will be:
 - To visualize the current scenario of Covid-19 in NRW for all over the state with the major details like age-group, demography, gender, recovered and active cases ratio on daily basis. This provides an overview on the existing situation.
 - To visualize the infection rate in NRW with age group and location using covid_de.csv and demographic_de.csv respectively. This helps the user to control the Covid-19 spread in particular county.
 - To visualize the age group, gender and active cases then highlight the age group such as "0 to 14". This helps the user to monitor the children's health conditions and analyze the impact of operation of schools (Kindergarten).
-- To visulaize and highlight the increase/decrease in Covid-19 infections with respect to population, active and recovered cases. This helps the user to decide upon the operation and further plans to open/retain schools, universities, shopping malls and workplaces.
+- To visualize and highlight the increase/decrease in Covid-19 infections with respect to population, active and recovered cases. This helps the user to decide upon the operation and further plans to open/retain schools, universities, shopping malls and workplaces.
 - Compare the current situation of Covid-19 spread of NRW with other states to make policies like lockdown etc.
 
 
 
 ### VISUALIZATION TECHNIQUES
 
+The preprocessed data will be visualized using various interactive visualization techniques to have a broader overview of correlation amongst data which will help to deduce significant information.
+
 ##### Techniques
 
-- Time oriented visualization technique
+The visualization techniques that will be used are as follows:
+
+- **Time-oriented visualization technique**
   - Multi-series Line chart (for multivariate data) : x-axis represents "days" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).
-- Region-based technique
+- **Region-based technique**
   - Bar chart(3D): x-axis represents "age group" and y-axis represents "No. of cases".
   - Grouped Bar chart(3D) (for multivariate data): x-axis represents "Counties" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).
-
-<li> Scatter plot (for multivariate data)</li>
-
-
- x-axis represents "age group" whereas y-axis represents "No. of cases".  Graphical attribute (glyph) is a colour which denotes gender (male, female).
-
-<li> Bubble chart</li>
+- **Multivariate data visualization technique**
+  - Scatter plot (for multivariate data): x-axis represents "age group" whereas y-axis represents "No. of cases".  Graphical attribute (glyph) is a colour which denotes gender (male, female).
+  - Bubble chart: x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases.
 
 
- x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases.
-</ol>
 
 ### INTERACTIONS
 

@@ -1,5 +1,4 @@
 <ol>
-
 The preprocessed data will be visualized using various interactive visualization techniques to have a broader overview of correlation amongst data which will help to deduce significant information.<br />
 The visualization techniques that will be used are as follows:<br />
 <li> Time oriented visualization technique</li> 
