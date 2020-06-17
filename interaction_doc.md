@@ -10,7 +10,7 @@ Interaction in visualization techniques provides more understanding of visual re
 Interaction for visualization techniques specified as following:
 -  **Filtering/ Range slider** :
  With the use of range slider, the user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. 
- This technique can be used in Multi-Series line chart.
+ <br>This technique can be used in Multi-Series line chart.
 
 - **Selection**:
 Selection can be used for showing different data variables by clicking/unclicking on it and selection will be one or multiple.
