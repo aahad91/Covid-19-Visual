@@ -65,7 +65,18 @@ The Second file **demographics_de.csv** that we are going to use for our project
 ### USER AND TASK
 
 (Assigned: Suganthi Jaganathan)
-
+<ol>
+<li>Users</li>
+<ul>
+The potential user would be the North-Rhine-Westphalia (NRW) State government, Germany
+</ul>
+<li>Task</li>
+Sophisticated tasks would be,
+<ul>
+<li>To visualize the current scenario in NRW for all over the state with the major details like age-group, demography, population of that particular city/town, gender, recovered and active cases ratio on daily basis. This provides an overview on the existing situation </li>
+<li>To visualize the infection rate in NRW with age group and location using covid_de.csv and demographic_de.csv respectively. This helps the user to track upon infections on needed location </li>
+<li>To visualize the age group, gender and active cases then highlight the age group 0 to 14. This helps the user to monitor the children's health conditions and analyze the impact of operation of schools (Kindergarten) </li>
+<li>To visulaize and highlight the increase/decrease in Covid-19 infections with respect to population, active and recovered cases. This helps the user to decide upon the operation and further plans to open/retain schools, universities malls, pubs and workplaces </li>
 
 
 ### VISUALIZATION TECHNIQUES
