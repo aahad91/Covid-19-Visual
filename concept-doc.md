@@ -61,12 +61,12 @@ The Second file **demographics_de.csv** that we are going to use for our project
 
 
 ### USER AND TASK
-Users are the ones for whom the application or the concept has been designed. Meanwhile, tasks are used to express the target of our visualization.
-##### Users
+Users are the ones for whom the application or the concept has been designed. Meanwhile, tasks are used to express the target of our visualization. They describe the purpose of an application or a project.
+##### User
 
 The potential user would be the North-Rhine-Westphalia (NRW) State government, Germany.
 
-##### Tasks
+##### Task
 
 Sophisticated tasks will be:
 
