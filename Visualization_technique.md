@@ -10,7 +10,7 @@
 <li> Multivariate visualization technique</li>
 
 <ul><li>Bar chart(3D)</li>
-x-axis represents "age group" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).</ul>
+x-axis represents "age group" and y-axis represents "No. of cases".</ul>
 
 <ul><li>Grouped Bar chart(3D)</li>
  x-axis represents "States" and y-axis represents "cases". Graphical attribute (glyph) is a colour which denotes categories of cases (confirmed, recovered, death).</ul>
