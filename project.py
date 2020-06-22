@@ -19,8 +19,9 @@ import plotly.express as px
 #def multi_line_chart(data):
     #Bhagyashree
 
-#def bar_chart(data):
+def bar_chart(data):
     #Ahad
+    print(data.head)
 
 #def gp_bar_chart(data):
     #Suganthi
@@ -42,7 +43,8 @@ if __name__ == "__main__":
     # data2 -> demographic_de.csv
     # Ahad
     data1 = pd.read_csv('data/covid_de.csv')
-    print(data1.head())
 
     data2 = pd.read_csv('data/demographics_de.csv')
-    print(data2.head())
+
+    bar_chart(data1)
+
