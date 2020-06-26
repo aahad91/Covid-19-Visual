@@ -21,8 +21,24 @@ import plotly.express as px
 
 def bar_chart(data):
     #Ahad
-    print(data.head)
+    data.age_group.unique()
+    d2 = data[data.state == 'Nordrhein-Westfalen']
+    print(d2.age_group.isna().sum())
+    d2.fillna(method='pad', inplace=True)
+    print(d2.age_group.isna().sum())
+    d2.age_group = d2.age_group.str.replace('-', '_') 
+    #print(d2[d2.age_group == '00_04'].groupby(d2.state == 'Nordrhein-Westfalen').cases.sum())
+    #dic = {}
+    #d2 = d2[['age_group', 'cases']]
+    d3 = d2.groupby('age_group')['cases'].apply(lambda x : x.sum()).reset_index()
+    # for i in d2.age_group.unique():
 
+    print(d3.head())
+    
+    #d2.groupby([d2.age_group])['cases'].sum()
+    #print(d2)
+    fig = px.bar(d3, x='age_group', y='cases')
+    fig.show()
 #def gp_bar_chart(data):
     #Suganthi
 
@@ -43,8 +59,6 @@ if __name__ == "__main__":
     # data2 -> demographic_de.csv
     # Ahad
     data1 = pd.read_csv('data/covid_de.csv')
-
     data2 = pd.read_csv('data/demographics_de.csv')
 
     bar_chart(data1)
-
