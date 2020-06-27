@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+import plotly.graph_objs as go
 from plotly.offline import plot
 
 # ---Task Functions --- #
@@ -32,10 +33,10 @@ def multi_line_chart(data1):
                    xaxis_title='Date',
                    yaxis_title='Total_cases',
                    xaxis_tickformat = '%d/%m/%Y',font=dict(family='Arial', color='black', size=15), legend_title_text='',
-                   legend=dict(x=0.2, y=-0.6,orientation='h',font=dict(family='Arial', color='black', size=20)), plot_bgcolor='black')
+                   legend=dict(x=0.2, y=-0.6,orientation='h',font=dict(family='Arial', color='black', size=20)))
    figure.update_traces(mode='lines+markers', marker_line_width=2, marker_size=8)
-   figure.update_xaxes(rangeslider_visible=True, tickangle=-45, tickfont=dict(family='Arial', color='black', size=15), showgrid=True, gridwidth=0.1, gridcolor='dimgray')
-   figure.update_yaxes(tickfont=dict(family='Arial', color='black', size=15), showgrid=True, gridwidth=0.1, gridcolor='dimgray')
+   figure.update_xaxes(rangeslider_visible=True, tickangle=-45, tickfont=dict(family='Arial', color='black', size=15))
+   figure.update_yaxes(tickfont=dict(family='Arial', color='black', size=15))
    plot(figure, filename='multiseries.html')
 
 #def bar_chart(data):
@@ -51,21 +52,61 @@ def scatter_plt(data1):
     data1_nrw_updated = data1_state_nrw.fillna(method ='pad')
     data1_nrw_scatter = data1_nrw_updated.groupby(['age_group','gender']).sum()
     data1_nrw_scatter = data1_nrw_scatter.reset_index()
-    data1_nrw_scatter['age_group'] = data1_nrw_scatter['age_group'].str.replace('-','_')
+    data1_nrw_scatter['age_group'] = data1_nrw_scatter['age_group'].str.replace('-', '_')
     
     # Visualization of plot
-    figure2 = px.scatter(data1_nrw_scatter, x="age_group", y=["cases"], color="gender", symbol="gender")
-    figure2.update_xaxes(
+    fig = go.Figure()
+    figure2 = px.scatter(data1_nrw_scatter, x="age_group", y=["cases"], color="gender", symbol="gender", color_discrete_map={'F': 'darkgreen', 'M': 'darkblue'})
+    
+    figure3 = px.scatter(data1_nrw_scatter, x="age_group", y=["deaths"], color="gender", symbol="gender", color_discrete_map={'F': 'darkred', 'M': 'black'})
+    
+    figure4 = px.scatter(data1_nrw_scatter, x="age_group", y=["recovered"], color="gender", symbol="gender", color_discrete_map={'F': 'darkmagenta', 'M': 'brown'})
+    
+
+    s=0
+    for i in data1_nrw_scatter.gender.unique():
+       fig.add_traces(figure2.data[s])
+       fig.add_traces(figure3.data[s])
+       fig.add_traces(figure4.data[s])
+       s+=1
+    
+    fig.update_xaxes(
     tickvals = ["00_04", "05_14", "15_34", "35_59","60_79", "80_99"],
-    ticktext = ["00-04", "05-14", "15-34", "35-59","60-79", "80-99"], tickfont=dict(family='Arial', color='black', size=15)) 
-    figure2.update_yaxes(tickfont=dict(family='Arial', color='black', size=15))
-    figure2.update_layout(title='Gender wise (Male(M) / Female(F)) total confirmed cases per age-group for NRW',
-                   xaxis_title = 'Age_group',
-                   yaxis_title = 'Total_confirmed_cases',
-                   xaxis_tickformat = '%d/%m/%Y',font=dict(family='Arial', color='black', size=15),legend_title_text=''
-                   ,legend=dict(x=0.44, y=-0.1,orientation='h',font=dict(family='Arial', color='black', size=20)))
-    figure2.update_traces(mode='markers', marker=dict(size=12))
-    plot(figure2, filename='scatter.html')
+    ticktext = ["00-04", "05-14", "15-34", "35-59","60-79", "80-99"], tickfont=dict(family='Arial', color='black', size=15))
+  
+    fig.update_yaxes(tickfont=dict(family='Arial', color='black', size=15))
+    fig.update_layout(title='Gender wise (Male(M) / Female(F)) total cases per age-group for NRW',
+                   xaxis_title='Age_group',
+                   yaxis_title='Total_cases',
+                   legend_title_text='', font=dict(family='Arial', color='black', size=15)
+                   , legend=dict(x=0.43, y=-0.1, orientation='h', font=dict(family='Arial', color='black', size=20)))
+    fig.update_traces(mode='markers', marker=dict(size=12))
+    fig.update_layout(
+    updatemenus=[
+        dict(
+            active=0,
+            type="buttons",
+            direction="right",
+            x=0.75,
+            y=1.07,
+            buttons=list([
+                dict(label="Total_confirmed_cases",
+                     method="update",
+                     args=[{"visible": [True, False,False]},
+                           ]),
+                dict(label="Total_death_cases",
+                     method="update",
+                     args=[{"visible": [False, True, False]},
+                           ]),
+                dict(label="Total_recovered_cases",
+                     method="update",
+                     args=[{"visible": [False, False, True]},
+                           ]),
+                
+            ]),
+        )
+    ])  
+    plot(fig, filename='scatter.html')
     
 
 #def bubble_chart(data1, data2):
