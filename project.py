@@ -23,10 +23,10 @@ def bar_chart(data1, data2):
     #Ahad
     
     return bar
-def gp_bar_chart(data2):
+def gp_bar_chart(data1):
     #Suganthi
 #Preprocessing the data
-    df_nrw = data2[data2.state == 'Nordrhein-Westfalen']
+    df_nrw = data1[data1.state == 'Nordrhein-Westfalen']
     df_nrw.fillna(method='pad')
     df_nrw['age_group']=df_nrw['age_group'].str.replace('-','_')
     df_new=df_nrw.groupby(['county'])["cases", "deaths","recovered"].apply(lambda x : x.astype(int).sum()).reset_index()
@@ -61,7 +61,7 @@ def dashboard(data1,data2):
 # --------------------- #
     if __name__ == "__main__":
         
-        gp_bar_chart(data2)
+        gp_bar_chart(data1)
         
     # variables
     # data1 -> covid_de.csv
