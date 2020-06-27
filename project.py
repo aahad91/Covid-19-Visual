@@ -12,7 +12,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
-
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 # ---Task Functions --- #
 
 
@@ -21,24 +22,15 @@ import plotly.express as px
 
 def bar_chart(data):
     #Ahad
-    data.age_group.unique()
-    d2 = data[data.state == 'Nordrhein-Westfalen']
-    print(d2.age_group.isna().sum())
-    d2.fillna(method='pad', inplace=True)
-    print(d2.age_group.isna().sum())
-    d2.age_group = d2.age_group.str.replace('-', '_') 
-    #print(d2[d2.age_group == '00_04'].groupby(d2.state == 'Nordrhein-Westfalen').cases.sum())
-    #dic = {}
-    #d2 = d2[['age_group', 'cases']]
-    d3 = d2.groupby('age_group')['cases'].apply(lambda x : x.sum()).reset_index()
-    # for i in d2.age_group.unique():
-
-    print(d3.head())
-    
-    #d2.groupby([d2.age_group])['cases'].sum()
-    #print(d2)
-    fig = px.bar(d3, x='age_group', y='cases')
-    fig.show()
+    #print(data)
+    nrw_data = data[data.state == 'Nordrhein-Westfalen']
+    nrw_data.fillna(method='pad', inplace=True)
+    nrw_data.age_group = nrw_data.age_group.str.replace('-', '_') 
+    nrw_data = nrw_data.groupby('age_group')['cases'].apply(lambda x : x.sum()).reset_index()
+    # fig = px.bar(nrw_data, x='age_group', y='cases', color='cases', color_continuous_scale=px.colors.sequential.YlGnBu)
+    # fig.update_layout(title="Cases against Age Group", xaxis_title="Age Group", yaxis_title="Total Cases")
+    # fig.show()
+    return nrw_data
 #def gp_bar_chart(data):
     #Suganthi
 
@@ -48,9 +40,30 @@ def bar_chart(data):
 #def bubble_chart(data1, data2):
     #Sayalee
 
-#def dashboard(data1, data2):
+def dashboard(data1, data2):
     # for combining all plot and configuring dashbaord
     # Ahad
+    fig = make_subplots(
+        rows=3, cols=2,
+        specs= [[{"colspan": 2}, None], [{}, {}], [{}, {}]],
+        subplot_titles=("First", "Second", "Third", "Forth", "Fifth")
+    )
+
+    # fig.add_trace(, row=1, cols=1)
+
+    # fig.add_trace(, row=2, cols=1)
+
+    # fig.add_trace(, row=2, cols=2)
+
+    # fig.add_trace(, row=3, cols=1)
+
+
+    barplt = bar_chart(data1)
+    fig.add_trace(go.Bar(x=barplt.age_group, y=barplt.cases, color=barplt.cases), row=3, cols=2)
+    fig.update_xaxes(title_text="Age Group", row=1, col=1)
+    fig.update_yaxes(title_text="Total Cases", row=1, col=1)
+    fig.update_layout(title_text="NRW Covid-19 Dashboard")
+    fig.show()
 # --------------------- #
 if __name__ == "__main__":
     print("Hello Everyone!!")
@@ -62,3 +75,4 @@ if __name__ == "__main__":
     data2 = pd.read_csv('data/demographics_de.csv')
 
     bar_chart(data1)
+    dashboard(data1, data2)
