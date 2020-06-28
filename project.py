@@ -32,9 +32,6 @@ def bar_chart(data1, data2):
     pop.age_group = pop.age_group.str.replace('-', '_')
     pop = pop.groupby('age_group')['population'].apply(lambda x : x.sum()).reset_index()
     nrw_data['population'] = pop['population']
-     # fig = px.bar(nrw_data, x='age_group', y='cases', color='cases', color_continuous_scale=px.colors.sequential.YlGnBu)
-    # fig.update_layout(title="Cases against Age Group", xaxis_title="Age Group", yaxis_title="Total Cases")
-    # fig.show()
     bar=px.bar(x=nrw_data.age_group, y=nrw_data.cases, color=nrw_data.cases,
                 color_continuous_scale=px.colors.sequential.YlGnBu, hover_data=[nrw_data.population],
                 labels={'x':'Age Group', 'y':'Cases', 'hover_data_0':'Population'}).data[0]
@@ -55,14 +52,6 @@ def gp_bar_chart(data):
             go.Bar(x=x, y=df_new['recovered'], name='Recovered cases', marker=go.bar.Marker(color='#0000FF'), visible = False)
         ]
     return bar_plots
-
-    # title=go.layout.Title(text="Covid-19 Visualization in NRW county"),
-    # yaxis_title="TOTAL CASES",
-    # xaxis_title="COUNTY",
-    # xaxis_tickvals=df_new.county,
-    # xaxis_ticktext=tuple(df_new['county'].values)       
-    # fig3 = go.Figure(data=bar_plots, layout=layt)
-    # fig3.update_xaxes(rangeslider_visible=True)
 
 #def scatter_plt(data):
     #Bhagyashree
@@ -115,16 +104,8 @@ def bubble_chart():
     return df
 
 def dashboard(data1, data2):
-    # for combining all plot and configuring dashbaord
-    # Ahad
-    # fig = make_subplots(
-    #     rows=3, cols=2,
-    #     specs= [[{"colspan": 2}, None], [{}, {}], [{}, {}]],
-    #     subplot_titles=("First", "Second", "Third", "Forth", "Cases against Age Group")
-    # )
     nrw_data = bar_chart(data1, data2)
     df = bubble_chart()
-
 
     fig = go.Figure()
 
@@ -132,10 +113,8 @@ def dashboard(data1, data2):
     fig2 = go.Figure()
     fig3 = go.Figure(data=gp_bar_chart(data1))
     
-    #hi = go.Bar(x=nrw_data.age_group, y=nrw_data.cases,text="give some name here")
-    # fig.add_trace(go.Bar(x=nrw_data.age_group, y=nrw_data.cases,visible=True))
     fig1.add_trace(go.Bar(x=nrw_data.age_group, y=nrw_data.cases,text="give some name here"))
-
+    
     s=0
     for j in df.county:
         fig2.add_trace(go.Scatter(x=df.loc[df['county'] == j].population,
@@ -154,8 +133,6 @@ def dashboard(data1, data2):
     visible_arr1.append(False)
     visible_arr2.append(False)
 
-    # fig1.add_trace(fig1.data[0])
-    # fig1.add_trace(fig1.data[0])
     fig.add_trace(fig1.data[0])
     g=0
     for m in df.county:
@@ -179,83 +156,97 @@ def dashboard(data1, data2):
     visible_arr1.append(False)
     visible_arr2.append(True)
     
+    # high_annotations = [
+    #     dict(x=nrw_data.age_group, y=nrw_data.cases,
+    #         xref="x", yref="y",
+    #         text="Hello",
+    #         ax=0, ay=-40)
+    #     ]
+    annotation2=[
+            dict(
+                x=0.50,
+                y=-0.25,
+                showarrow=False,
+                text="Counties",
+                xref="paper",
+                yref="paper",
+                textangle=0
+            ),
+            dict(
+                x=-0.07,
+                y=0.5,
+                showarrow=False,
+                text="Total Cases",
+                textangle=-90,
+                xref="paper",
+                yref="paper"
+            )
+    ]
+    annotation3=[
+            dict(
+                x=0.50,
+                y=-0.09,
+                showarrow=False,
+                text="Age Group",
+                xref="paper",
+                yref="paper",
+                textangle=0
+            ),
+            dict(
+                x=-0.07,
+                y=0.5,
+                showarrow=False,
+                text="Total Cases",
+                textangle=-90,
+                xref="paper",
+                yref="paper"
+            )
+    ]
+    annotation4=[
+            dict(
+                x=0.50,
+                y=-0.1,
+                showarrow=False,
+                text="Population",
+                xref="paper",
+                yref="paper",
+                textangle=0
+            ),
+            dict(
+                x=-0.07,
+                y=0.5,
+                showarrow=False,
+                text="Total Cases",
+                textangle=-90,
+                xref="paper",
+                yref="paper"
+            )
+    ]
     fig.update_layout(
+        title = "Test",
+        #xaxis_title="x Axis Title",
+        #yaxis_title="Total Cases",
         updatemenus=[
             dict(
                 active=0,
-                buttons=list([
-                    
+                buttons=list([   
                     dict(label="By Age wise",
                         method="update",
-                        args=[{"visible": visible_arr
-                                
-                                },{"title": "Cases By Age group"}]),
+                        args=[{"visible": visible_arr},
+                            {"title": "Cases By Age group", "annotations":annotation3}]),
                     dict(label="By population",
                         method="update",
                         args=[{"visible": visible_arr1},
-                            {"title": "Cases by Population"}]),
+                            {"title": "Cases by Population", "annotations":annotation4}]),
                     dict(label="By County wise",
                         method="update",
-                        args=[{"visible": visible_arr2
-                                
-                                },{"title": "Cases by Counties NRW"}]),
+                        args=[{"visible": visible_arr2  
+                                },{"title": "Cases by Counties NRW", "annotations":annotation2}]),
                                 
                 ]),
             )
         ])
-    # fig.add_trace(px.bar(x=nrw_data.age_group, y=nrw_data.cases, color=nrw_data.cases,
-    #                 color_continuous_scale=px.colors.sequential.YlGnBu, hover_data=[nrw_data.population],
-    #                 labels={'x':'Age Group', 'y':'Cases', 'hover_data_0':'Population'}).data[0])
-    # fig.add_trace(, row=1, col=1)
-
-    # fig.add_trace(, row=2, col=1)
-
-    # fig.add_trace(, row=2, col=2)
-    # df = bubble_chart()
-    # s=0
-    # for j in df.county:
-    #     fig.add_trace(go.Scatter(x=df.loc[df['county'] == j].population,
-    #             y=df.loc[df['county'] == j].total_cases,
-    #             name=j, text=j,
-    #             visible = True,               
-    #             mode='markers',                 
-    #             marker=dict(size=list(df.total_cases/15),color=s)
-    #     ))
-    #     s+= 1
-
-
-    #fig.add_trace(go.Bar(x=barplt.age_group, y=barplt.cases), row=3, col=2)
-    #fig.add_bar(x=barplt.age_group, y=barplt.cases, row=3, col=2)
-   # fig.add_trace(bar_chart(data1, data2), row=3, col=2)
-        # px.bar(x=barplt.age_group, y=barplt.cases, 
-        #         color_continuous_scale=px.colors.sequential.YlGnBu, hover_data=[barplt.population],
-        #         labels={'x':'Age Group', 'y':'Cases', 'hover_data_0':'Population'}).data[0], 
-    #fig.update_xaxes(title_text="Age Group", row=3, col=2)
-    #fig.update_yaxes(title_text="Total Cases", row=3, col=2)
-    # fig.add_trace(go.Bar(x=nrw_data.age_group, y=nrw_data.cases, visible=False))
-    # fig.update_layout(
-    # updatemenus=[
-    #     dict(
-    #         active=0,
-    #         buttons=list([
-    #             dict(label="By Age wise",
-    #                  method="update",
-    #                  args=[{"visible": [True, False]},
-    #                        {"title": "Yahoo",
-    #                         }]),
-    #             dict(label="By population",
-    #                  method="update",
-    #                  args=[{"visible": [False, True]},
-    #                        {"title": "Yahoo High"}]),
-                
-    #         ]),
-    #     )
-    # ])
-
-    #fig.update_layout(title_text="Nordrhein-Westfalen Covid-19 Dashboard")
-    # fig1.show()
-    # fig2.show()
-    # fig3.show()
+    fig.update_layout(title_text="Nordrhein-Westfalen Covid-19 Dashboard",height=1000,width=2000)
     fig.show()
 # --------------------- #
 if __name__ == "__main__":
