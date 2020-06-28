@@ -158,7 +158,6 @@ Plotly
 Matplotlib
 
 
-=======
 The following libraries were used,
 - Pandas
 - NumPy
@@ -181,7 +180,7 @@ Tasks were fairly distributed and the below table depicts the responsibilities,
 Most of the goals are met from the concept document.
 We followed the same visualization techniques and representations. 
 However, there are meagre changes like,
-=======
+
 | Participant                   | Concept                   | Visualization and Interaction                                  |
 | ------------------------------| --------------------------| ---------------------------------------------------------------|
 | **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation                            |
