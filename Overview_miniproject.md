@@ -20,8 +20,8 @@ There are two multivariate datasets that we are going to use **covid_de.csv** an
 - **demographic_de.csv**
   - https://www.kaggle.com/headsortails/covid19-tracking-germany?select=demographics_de.csv
   - https://www-genesis.destatis.de/genesis/online/data?operation=sprachwechsel&language=en (Collected by [Statistisches Bundesamt](https://www.destatis.de/EN/Home/_node.html))
--**counties_population.csv**
-  -https://www.citypopulation.de/en/germany/admin/05__nordrhein_westfalen/
+- **counties_population.csv**
+  - https://www.citypopulation.de/en/germany/admin/05__nordrhein_westfalen/
 
 ##### Dataset Type
 
