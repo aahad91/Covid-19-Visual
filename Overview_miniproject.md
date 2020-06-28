@@ -92,7 +92,7 @@ We have defined a set of visualization tasks from which the user could be benefi
   
   -The above information would help the user to resume/halt the kindergarten/schools operations, revise restrictions on workplaces/shops/markets and further to decide upon the      lockdown phases.
   
-  -To know the majors and policies taken to reduce no of cases daywise can help government to take majors 
+  -To know the major policies taken to reduce no of cases daywise can help government to take majors 
   
 
 
@@ -180,19 +180,10 @@ Tasks were fairly distributed and the below table depicts the responsibilities,
 Most of the goals are met from the concept document.
 We followed the same visualization techniques and representations. 
 However, there are meagre changes like,
-
-| Participant                   | Concept                   | Visualization and Interaction                                  |
-| ------------------------------| --------------------------| ---------------------------------------------------------------|
-| **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation                            |
-| **Bhagyashree Sanjay Borade** | Visualization Techniques  | Multi line series plot, Scatter plot, Integration/Documentation|
-| **Sayalee Chavan**            | Interaction               | Bubble plot, Integration/Documentation                         |
-| **Suganthi Jaganathan**       | User and Tasks            | Grouped Bar plot, Integration/Documentation                    |
-
-### CONCEPT
 We made sure that the goals framed for the initial concept have been covered completely.
 We followed the same visualization techniques and representations. However, there are meagre changes like,
 - 3D plots have been changed to 2D plots for making it more pleasant and appealing
-- We faced isseues while integrating all visualization techniques so it does not exist in final version
+- We faced issues while integrating all visualization techniques so it does not exist in final version
 - We have added dropdown so that use select visulaization bases on age,county,population,time and gender in single platform.
 
 
