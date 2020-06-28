@@ -51,9 +51,6 @@ def gp_bar_chart(data):
         ]
     return bar_plots
 
-#def scatter_plt(data):
-    #Bhagyashree
-
 def bubble_chart(data1, data3):
     pop = data1.loc[data1['state'] == 'Nordrhein-Westfalen']
     total_county = pop.county.unique()
