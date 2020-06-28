@@ -103,7 +103,7 @@ The visualization techniques that will be used are as follows:
 - **Time-oriented visualization technique**
   - Multi-series Line chart (for multivariate data) : x-axis represents "Dates" and y-axis represents "total_cases". Graphical attribute (glyph) denotes categories of cases (confirmed, recovered, death) legends.
 - **Region-based technique**
-  - Bar chart: x-axis represents "age group" and y-axis represents "No. of cases". Also, the data categorization is done with respect to population. Hover represents the count of population.
+  - Bar chart: x-axis represents "age group" and y-axis represents "population". Also, the data categorization is done with respect to number of cases. Hover represents the population, and total cases against the age group.
   - Grouped Bar chart (for multivariate data): x-axis represents "Counties" and y-axis represents "cases". Each bar in a group represent the Confirmed, recovered and death cases with respect to every County.
     The legends support to view the data categorically such as confirmed cases in all the Counties, similarly recovered cases in Counties and so on.
     Hover represents the count for each category.
