@@ -10,7 +10,7 @@ This document provides the overview of the completed project, containing the des
 
 ### DATA
 
-There are two multivariate datasets that we are going to use **covid_de.csv** and **demgraphics_de.csv**. First dataset **covid_de.csv** provides the daily update of Covid-19 cases of different states and counties of Germany based on gender and age group. Second dataset **demgraphics_de.csv** is the supporting dataset for the first dataset as it contains the population of different states of Germany based on gender and age group. The reason of choosing these dataset upon other dataset is that it satisfies the requirement of End User described below.
+There are three multivariate datasets that we are going to use **covid_de.csv**,  **demgraphics_de.csv** and **counties_population.csv**. First dataset **covid_de.csv** provides the daily update of Covid-19 cases of different states and counties of Germany based on gender and age group. Second dataset **demgraphics_de.csv** is the supporting dataset for the first dataset as it contains the population of different states of Germany based on gender and age group. Third dataset **counties_population.csv** describes the population of each county in NRW state. The reason of choosing these dataset upon other dataset is that it satisfies the requirement of End User described below.
 
 ##### Data Source
 
@@ -68,8 +68,6 @@ The Third file **counties_population.csv** that we are going to use for our proj
 - **demographics_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_3^P">, where P represents that dataset has Point Data and 3 represents the dimensions.
 - **counties_population.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_3^P">, where P represents that dataset has Point Data and 2 represents the dimensions.
 
-
-
 ### USER AND TASK
 Users are the ones for whom the application or the concept has been designed. Meanwhile, tasks are used to express the target of our visualization.
 They describe the purpose of an application or a project.
@@ -80,25 +78,23 @@ The Dashboard has been exclusively designed for the State Govt of North-Rhein-We
 
 ##### Task
 
-We have defined a set of visualization tasks from which the user could be benefitted on the following aspects,
+We have defined a set of visualization tasks from which the user could be benefitted on the following aspects:
 
-  -To know the Covid-19 infections explicitly with respect to every County in NRW and its growth/decrease
-  
-  -To know the infection rate with respect to children (aged 0 to 4 or 5 to 14) on the after effect of the operations of kindergarten/schools
-  
-  -To know the spread of infection with every age group such as 0 to 4, 35 to 59 and find the most vulnerable group
-  
-  -To know the infection rate with respect to gender male and female for every age group 
-  
-  -The above information would help the user to resume/halt the kindergarten/schools operations, revise restrictions on workplaces/shops/markets and further to decide upon the      lockdown phases.
-  
-  -To know the major policies taken to reduce no of cases daywise can help government to take majors 
-  
+- To know the Covid-19 infections explicitly with respect to every County in NRW and its growth/decrease.
 
+- To know the infection rate with respect to children (aged 0 to 4 or 5 to 14) on the after effect of the operations of kindergarten/schools.
+
+- To know the spread of infection with every age group such as 0 to 4, 35 to 59 and find the most vulnerable age group.
+
+- Daily status of the of Covid-19 interms of total cases, recovered cases and deaths of the state.
+- To monitor the spread of Covid-19 in each county with respect to the population.
+
+- The above information would help the user to resume/halt the kindergarten/schools operations, revise restrictions on workplaces/shops/markets and further to decide upon the lockdown phases for a county.
+
+- To know the major policies taken to reduce no of cases daywise can help government to take majors.
 
 ### VISUALIZATION TECHNIQUES
-Data is preprocessed by acquiring only the NRW state data and its relevant columns. The data was polished then (handling bad data )and is utilized for transformation and graphical representation .
-It will be visualized using various interactive visualization techniques to have a broader overview of correlation amongst data which will help to deduce significant information.
+Data is preprocessed by acquiring only the NRW state data and its relevant columns. The data was polished then (handling bad data )and is utilized for transformation and graphical representation . It will be visualized using various interactive visualization techniques to have a broader overview of correlation amongst data which will help to deduce significant information.
 
 ##### Techniques
 
@@ -112,27 +108,18 @@ The visualization techniques that will be used are as follows:
     The legends support to view the data categorically such as confirmed cases in all the Counties, similarly recovered cases in Counties and so on.
     Hover represents the count for each category.
 - **Multivariate data visualization technique**
-  - Scatter plot (for multivariate data): x-axis represents "age group" whereas y-axis represents "No. of cases". Graphical attribute (glyph) denotes the gender (male, female). Legends are added to get a clear view.
-    Hover represents the count of cases,gender,age group.
-  - Bubble chart: x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases with respect to every County which is added to legends.
-    Hover represents the count cases and population.
-
-
+  - Bubble chart: x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases with respect to every County which is added to legends. Hover represents the count cases and population.
 
 ### INTERACTIONS
 
-Interaction in visualization techniques provides more understanding of visual representation. 
-User can do the selection, filtering for switching between different visualization techniques or choosing data variables. 
-Interaction for visualization techniques specified as following,
-#### Interaction Operators
+Interaction in visualization techniques provides more understanding of visual representation. User can do the selection, filtering for switching between different visualization techniques or choosing data variables.  Interaction for visualization techniques specified as following:
+##### Interaction Operators
 
--**Filtering/ Range slider:** ( Purpose : Navigation) With the use of range slider, the user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. This technique can be used in Multi-Series line chart.
+- **Filtering/ Range slider:** ( Purpose : Navigation) With the use of range slider, the user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. This technique can be used in Multi-Series line chart.
 
--**Selection :** (Purpose : Selection) Selection can be used for visualizing different data variables by selecting/unselecting legend-based checkboxes and selection would be one or multiple. This interaction operator can be used in Multi-Series Line Chart where the user can do selection based on "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". 
- For Bar Chart and Grouped Bar Chart, the user can select between Bar Chart and Grouped Bar Chart in dropdown. For Grouped Bar Chart, visualization can be customized by selecting checkboxes represents "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". 
- For Scatter plot multi-series, User can customize the visualization by selecting the checkbox in legends based on gender(male/ female). For Bubble Chart, User can customize visualization by selecting the checkbox which consists of "Total confirmed cases", "No. of recovered cases", "No. of deaths" parameters.
- 
--**Hover :** (Purpose : Distortion)This interactive technique reveals detailed data point information by moving the mouse cursor over data value space which will be included in all visualization techniques mentioned above. For eg, hovering on scatter data points reveals information about no of cases represented by y-axis and age group represented by x-axis.
+- **Selection :** (Purpose : Selection) Selection can be used for visualizing different data variables by selecting/unselecting legend-based checkboxes and selection would be one or multiple. This interaction operator can be used in Multi-Series Line Chart where the user can do selection based on "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". For Bar Chart and Grouped Bar Chart, the user can select between Bar Chart and Grouped Bar Chart in dropdown. For Grouped Bar Chart, visualization can be customized by selecting checkboxes represents "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". For Bubble Chart, User can customize visualization by selecting the checkbox which consists of "Total confirmed cases", "No. of recovered cases", "No. of deaths" parameters.
+
+- **Hover :** (Purpose : Distortion)This interactive technique reveals detailed data point information by moving the mouse cursor over data value space which will be included in all visualization techniques mentioned above. For eg, hovering on scatter data points reveals information about no of cases represented by y-axis and age group represented by x-axis.
 
 All the above interaction operators have been added to each and every individual component.
 
@@ -142,33 +129,22 @@ The operands are the data values or records mapped to a particular field such as
 #### Interaction Space
 
 - **Data value space**
-Data value space is utilized which is performed by the slider to highlight on specific data values.
-The categorical data will be highlighted on clicking the Legends (single or multiple is possible). Hover highlights data specific to x-axis.
-Purpose : To view a particular data range
+Data value space is utilized which is performed by the slider to highlight on specific data values. The categorical data will be highlighted on clicking the Legends (single or multiple is possible). Hover highlights data specific to x-axis.
+**Purpose :** To view a particular data range.
 - **Visualization Structure space**
 Visualization Structure space is utilized which is again performed by the slider.
-Purpose : To Move or navigate
-    
-    
+**Purpose :** To Move or navigate. 
 ### LIBRARIES
-The following libraries were used:
-Pandas
-NumPy
-Plotly
-Matplotlib
-
 
 The following libraries were used,
 - Pandas
 - NumPy
 - Plotly
-- Matplotlib
+- Matplotlib 
 
-   
 ### PARTICIPANTS
 
-We focussed to have equal participation of all the team members.
-Tasks were fairly distributed and the below table depicts the responsibilities,
+We focussed to have equal participation of all the team members. Tasks were fairly distributed and the below table depicts the responsibilities,
 | Participant                   | Concept                   | Visualization and Interaction              |
 | ------------------------------| --------------------------| -------------------------------------------|
 | **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation        |
@@ -177,15 +153,14 @@ Tasks were fairly distributed and the below table depicts the responsibilities,
 | **Suganthi Jaganathan**       | User and Tasks            | Grouped Bar plot, Integration/Documentation|
 
 ### CONCEPT
-Most of the goals are met from the concept document.
-We followed the same visualization techniques and representations. 
-However, there are meagre changes like,
-We made sure that the goals framed for the initial concept have been covered completely.
-We followed the same visualization techniques and representations. However, there are meagre changes like,
-- 3D plots have been changed to 2D plots for making it more pleasant and appealing
+We have tried to reach the goals mentioned in the concept document. We have tried to use the same  visualization techniques and representations. However, while polishing data, visualizing and achieving interactions, we faced challenges interms of data and visualization libaries. The steps we took to takle these challenges are as follows:
+
+- Added additional task, to monitor the spread of Covid-19 against population of the county.
+- We have added additional dataset **counties_population.csv** to support the tasks.
+- 3D plots have been changed to 2D plots for making it more pleasant and appealing.
 - We faced issues while integrating all visualization techniques so range sliders does not exist in final version.
-- We have added dropdown so that user can select visualization based on age,county,population,time and gender in single platform.
-- We have implemented scatter plot, but as it is based on age group there were less no of scatter points so it does not exist in final version
+- We have added dropdown so that user can select visualization based on age group , county, population, and date in single platform.
+- We have implemented scatter plot but does not include in the final version due to very less categories of age group data. 
 
 
 
