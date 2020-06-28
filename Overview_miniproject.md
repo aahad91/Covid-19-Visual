@@ -115,7 +115,7 @@ The visualization techniques that will be used are as follows:
 Interaction in visualization techniques provides more understanding of visual representation. User can do the selection, filtering for switching between different visualization techniques or choosing data variables.  Interaction for visualization techniques specified as following:
 ##### Interaction Operators
 
-- **Filtering/ Range slider:** ( Purpose : Navigation) With the use of range slider, the user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. This technique can be used in Multi-Series line chart.
+- **Filtering:** ( Purpose : Navigation) The user can select a particular range for days mentioned on the x-axis as well as able to see cases in the range of selected days. Filtering has been done for all the graphs by dropdown selection and checking/unchecking the legends".
 
 - **Selection :** (Purpose : Selection) Selection can be used for visualizing different data variables by selecting/unselecting legend-based checkboxes and selection would be one or multiple. This interaction operator can be used in Multi-Series Line Chart where the user can do selection based on "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". For Bar Chart and Grouped Bar Chart, the user can select between Bar Chart and Grouped Bar Chart in dropdown. For Grouped Bar Chart, visualization can be customized by selecting checkboxes represents "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". For Bubble Chart, User can customize visualization by selecting the checkbox which consists of "Total confirmed cases", "No. of recovered cases", "No. of deaths" parameters.
 
