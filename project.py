@@ -50,9 +50,9 @@ def gp_bar_chart(data):
         #Visualizing the data
     x = df_new['county']
     bar_plots = [
-            go.Bar(x=x, y=df_new['cases'], name='Confirmed cases', marker=go.bar.Marker(color='#FFA07A')),
-            go.Bar(x=x, y=df_new['deaths'], name='Deaths', marker=go.bar.Marker(color='#C71585')),
-            go.Bar(x=x, y=df_new['recovered'], name='Recovered cases', marker=go.bar.Marker(color='#0000FF'))
+            go.Bar(x=x, y=df_new['cases'], name='Confirmed cases', marker=go.bar.Marker(color='#FFA07A'), visible = False),
+            go.Bar(x=x, y=df_new['deaths'], name='Deaths', marker=go.bar.Marker(color='#C71585'), visible = False),
+            go.Bar(x=x, y=df_new['recovered'], name='Recovered cases', marker=go.bar.Marker(color='#0000FF'), visible = False)
         ]
     return bar_plots
 
@@ -141,7 +141,7 @@ def dashboard(data1, data2):
         fig2.add_trace(go.Scatter(x=df.loc[df['county'] == j].population,
                 y=df.loc[df['county'] == j].total_cases,
                 name=j, text=j,
-               # visible = False,              
+                visible = False,              
                 mode='markers',                 
                 marker=dict(size=list(df.total_cases/15),color=s)
         ))
@@ -179,30 +179,30 @@ def dashboard(data1, data2):
     visible_arr1.append(False)
     visible_arr2.append(True)
     
-    # fig.update_layout(
-    #     updatemenus=[
-    #         dict(
-    #             active=0,
-    #             buttons=list([
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                active=0,
+                buttons=list([
                     
-    #                 dict(label="By Age wise",
-    #                     method="update",
-    #                     args=[{"visible": visible_arr
+                    dict(label="By Age wise",
+                        method="update",
+                        args=[{"visible": visible_arr
                                 
-    #                             },{"title": "Cases By Age group"}]),
-    #                 dict(label="By population",
-    #                     method="update",
-    #                     args=[{"visible": visible_arr1},
-    #                         {"title": "Cases by Population"}]),
-    #                 dict(label="By County wise",
-    #                     method="update",
-    #                     args=[{"visible": visible_arr2
+                                },{"title": "Cases By Age group"}]),
+                    dict(label="By population",
+                        method="update",
+                        args=[{"visible": visible_arr1},
+                            {"title": "Cases by Population"}]),
+                    dict(label="By County wise",
+                        method="update",
+                        args=[{"visible": visible_arr2
                                 
-    #                             },{"title": "Cases by Counties NRW"}]),
+                                },{"title": "Cases by Counties NRW"}]),
                                 
-    #             ]),
-    #         )
-    #     ])
+                ]),
+            )
+        ])
     # fig.add_trace(px.bar(x=nrw_data.age_group, y=nrw_data.cases, color=nrw_data.cases,
     #                 color_continuous_scale=px.colors.sequential.YlGnBu, hover_data=[nrw_data.population],
     #                 labels={'x':'Age Group', 'y':'Cases', 'hover_data_0':'Population'}).data[0])
@@ -253,10 +253,10 @@ def dashboard(data1, data2):
     # ])
 
     #fig.update_layout(title_text="Nordrhein-Westfalen Covid-19 Dashboard")
-    fig1.show()
-    fig2.show()
-    fig3.show()
-    #fig.show()
+    # fig1.show()
+    # fig2.show()
+    # fig3.show()
+    fig.show()
 # --------------------- #
 if __name__ == "__main__":
     print("Hello Everyone!!")
