@@ -183,8 +183,9 @@ However, there are meagre changes like,
 We made sure that the goals framed for the initial concept have been covered completely.
 We followed the same visualization techniques and representations. However, there are meagre changes like,
 - 3D plots have been changed to 2D plots for making it more pleasant and appealing
-- We faced issues while integrating all visualization techniques so it does not exist in final version
-- We have added dropdown so that use select visulaization bases on age,county,population,time and gender in single platform.
+- We faced issues while integrating all visualization techniques so range sliders does not exist in final version.
+- We have added dropdown so that user can select visulization based on age,county,population,time and gender in single platform.
+- We have implemented scatter plot, but as it is based on age group there were less no of scatter points so it does not exist in final version
 
 
 
