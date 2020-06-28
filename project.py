@@ -113,7 +113,8 @@ def dashboard(data1, data2):
     fig2 = go.Figure()
     fig3 = go.Figure(data=gp_bar_chart(data1))
     
-    fig1.add_trace(go.Bar(x=nrw_data.age_group, y=nrw_data.cases,text="give some name here"))
+    fig1.add_trace(go.Bar(x=nrw_data.age_group, y=nrw_data.cases,name='Age Group, Cases',
+    textposition='outside',texttemplate='%{text:.2s}', text=nrw_data.population))
     
     s=0
     for j in df.county:
@@ -136,7 +137,6 @@ def dashboard(data1, data2):
     fig.add_trace(fig1.data[0])
     g=0
     for m in df.county:
-    #     print(g)
         fig.add_trace(fig2.data[g])
         g += 1
         visible_arr.append(False)
@@ -156,12 +156,26 @@ def dashboard(data1, data2):
     visible_arr1.append(False)
     visible_arr2.append(True)
     
-    # high_annotations = [
-    #     dict(x=nrw_data.age_group, y=nrw_data.cases,
-    #         xref="x", yref="y",
-    #         text="Hello",
-    #         ax=0, ay=-40)
-    #     ]
+    annotation1=[
+            dict(
+                x=0.50,
+                y=-0.25,
+                showarrow=False,
+                text="Date",
+                xref="paper",
+                yref="paper",
+                textangle=0
+            ),
+            dict(
+                x=-0.07,
+                y=0.5,
+                showarrow=False,
+                text="Total Cases",
+                textangle=-90,
+                xref="paper",
+                yref="paper"
+            )
+    ]
     annotation2=[
             dict(
                 x=0.50,
@@ -241,8 +255,7 @@ def dashboard(data1, data2):
                     dict(label="By County wise",
                         method="update",
                         args=[{"visible": visible_arr2  
-                                },{"title": "Cases by Counties NRW", "annotations":annotation2}]),
-                                
+                                },{"title": "Cases by Counties NRW", "annotations":annotation2}]),                     
                 ]),
             )
         ])
