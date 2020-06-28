@@ -192,7 +192,6 @@ However, there are meagre changes like,
 ### CONCEPT
 We made sure that the goals framed for the initial concept have been covered completely.
 We followed the same visualization techniques and representations. However, there are meagre changes like,
->>>>>>> 1ced03149de2ea6e27088a1878ac2150009ec652
 - 3D plots have been changed to 2D plots for making it more pleasant and appealing
 - We faced isseues while integrating all visualization techniques so it does not exist in final version
 - We have added dropdown so that use select visulaization bases on age,county,population,time and gender in single platform.
