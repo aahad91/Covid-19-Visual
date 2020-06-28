@@ -16,8 +16,36 @@ import warnings
 # ---Task Functions --- #
 warnings.simplefilter("ignore")
 
-#def multi_line_chart(data):
-    #Bhagyashree
+def multi_line_chart(data):
+    #Bhagyashree 
+    #Modified by Suganthi according to the new requirements
+    #Data Preprocess
+    data1 = pd.read_csv(r"H:\IDV_lab\covid_de.csv")
+    data1_state_nrw = data1.loc[data1['state']=='Nordrhein-Westfalen']
+    data1_state_nrw['date'] = pd.to_datetime(data1_state_nrw['date'])
+    data1_nrw_consolidated = data1_state_nrw.groupby([data1_state_nrw['date'].dt.date]).sum()
+    Total_cases = data1_nrw_consolidated.cumsum(axis=0)
+    Total_cases = Total_cases.rename(columns={"cases":"Total_confirmed_cases", "recovered":"Total_recovered_cases", "deaths":"Total_death_cases"})
+    print(Total_cases.index)
+    fig = go.Figure()
+    # Create and style traces
+    fig.add_trace(go.Scatter(x=Total_cases.index, y=Total_cases.Total_confirmed_cases, name='Total_confirmed_cases',
+                             line=dict(color='yellow', width=4)))
+    fig.add_trace(go.Scatter(x=Total_cases.index, y=Total_cases.Total_recovered_cases, name = 'Total recovered cases',
+                             line=dict(color='royalblue', width=4)))
+    fig.add_trace(go.Scatter(x=Total_cases.index, y=Total_cases.Total_death_cases, name='Total_death_cases',
+                             line=dict(color='salmon', width=4,
+                                  dash='dashdot') # dash options include 'dash', 'dot', and 'dashdot'
+    ))
+    
+    fig.update_layout(title='Covid-19 Visualization in NRW',
+                       xaxis_title='Date',
+                       yaxis_title='Total Cases')
+    
+    
+    fig.update_xaxes(rangeslider_visible=True)
+    fig.show()
+    return fig
 
 def bar_chart(data1, data2):
     #Ahad
