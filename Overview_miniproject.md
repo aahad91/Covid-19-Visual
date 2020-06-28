@@ -20,6 +20,8 @@ There are two multivariate datasets that we are going to use **covid_de.csv** an
 - **demographic_de.csv**
   - https://www.kaggle.com/headsortails/covid19-tracking-germany?select=demographics_de.csv
   - https://www-genesis.destatis.de/genesis/online/data?operation=sprachwechsel&language=en (Collected by [Statistisches Bundesamt](https://www.destatis.de/EN/Home/_node.html))
+-**counties_population.csv**
+  -https://www.citypopulation.de/en/germany/admin/05__nordrhein_westfalen/
 
 ##### Dataset Type
 
@@ -27,6 +29,7 @@ There are two multivariate datasets that we are going to use **covid_de.csv** an
 | ---------------------- | --------------------------- | -------------------------- |
 | **covid_de.csv**       | Non-Spatial Data            | Point Data                 |
 | **demographic_de.csv** | Non-Spatial Data            | Point Data                 |
+| **counties_population.csv** | Non-Spatial Data       | Point Data            		|
 
 ##### Dataset Characteristics
 
@@ -52,10 +55,18 @@ The Second file **demographics_de.csv** that we are going to use for our project
 | **age_group**  | Ordinal      | It consists of different age categories such as 0-4, 5-14, 15-34, 35-59, 60-79 and 80-99. |
 | **population** | Quantitative | It consists of population categorized by state, gender and age. |
 
+The Third file **counties_population.csv** that we are going to use for our project consist of following columns: 
+
+| Column Name    | Data Type    | Description                                                  |
+| -------------- | ------------ | ------------------------------------------------------------ |
+| **county**    | Nominal      | It contains the name of counties of each state label with LandKries(LK)/StadtKries(SK). Example SK Koeln, SK Hamm, LK Paderborn, LK Guetersloh in Nordrhein-Westfalen state. |
+| **population** | Quantitative | It consists of population categorized by counties |
+
 ##### Data Modeling
 
 - **covid_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_7^P">, where P represents that dataset has Point Data and 7 represents the dimensions.
 - **demographics_de.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_3^P">, where P represents that dataset has Point Data and 3 represents the dimensions.
+- **counties_population.csv** is described as Entity <img src="https://render.githubusercontent.com/render/math?math=E_3^P">, where P represents that dataset has Point Data and 2 represents the dimensions.
 
 
 
@@ -80,7 +91,9 @@ We have defined a set of visualization tasks from which the user could be benefi
   -To know the infection rate with respect to gender male and female for every age group 
   
   -The above information would help the user to resume/halt the kindergarten/schools operations, revise restrictions on workplaces/shops/markets and further to decide upon the      lockdown phases.
-
+  
+  -To know the majors and policies taken to reduce no of cases daywise can help government to take majors 
+  
 
 
 ### VISUALIZATION TECHNIQUES
@@ -92,17 +105,17 @@ It will be visualized using various interactive visualization techniques to have
 The visualization techniques that will be used are as follows:
 
 - **Time-oriented visualization technique**
-  - Multi-series Line chart (for multivariate data) : x-axis represents "Days" and y-axis represents "total_cases". Graphical attribute (glyph) denotes categories of cases (confirmed, recovered, death) with horizontal slider.
+  - Multi-series Line chart (for multivariate data) : x-axis represents "Dates" and y-axis represents "total_cases". Graphical attribute (glyph) denotes categories of cases (confirmed, recovered, death) legends.
 - **Region-based technique**
   - Bar chart: x-axis represents "age group" and y-axis represents "No. of cases". Also, the data categorization is done with respect to population. Hover represents the count of population.
   - Grouped Bar chart (for multivariate data): x-axis represents "Counties" and y-axis represents "cases". Each bar in a group represent the Confirmed, recovered and death cases with respect to every County.
-    A horizontal Slider is added to make the data appear more precisely. Also, the legends support to view the data categorically such as confirmed cases in all the Counties, similarly recovered cases in Counties and so on.
+    The legends support to view the data categorically such as confirmed cases in all the Counties, similarly recovered cases in Counties and so on.
     Hover represents the count for each category.
 - **Multivariate data visualization technique**
-  - Scatter plot (for multivariate data): x-axis represents "age group" whereas y-axis represents "No. of cases". Graphical attribute (glyph) denotes the gender (male, female). Horizontal Sider is added to get a clear view.
-    Hover represents the count of cases.
-  - Bubble chart: x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases with respect to every County which is added to Vertical slider.
-    Hover represents the count with?
+  - Scatter plot (for multivariate data): x-axis represents "age group" whereas y-axis represents "No. of cases". Graphical attribute (glyph) denotes the gender (male, female). Legends are added to get a clear view.
+    Hover represents the count of cases,gender,age group.
+  - Bubble chart: x-axis represents population and y-axis represents "No. of cases". Size of the bubble depends on the count of cases with respect to every County which is added to legends.
+    Hover represents the count cases and population.
 
 
 
@@ -134,18 +147,13 @@ Purpose : To Move or navigate
     
     
 ### LIBRARIES
-The following libraries were used,
+The following libraries were used:
 Pandas
 NumPy
 Plotly
 Matplotlib
 
-### CODE REPOSITORIES
-https://github.com/aahad91/Covid-19-Visual/tree/master
-https://github.com/aahad91/Covid-19-Visual/tree/ahad
-https://github.com/aahad91/Covid-19-Visual/tree/bhagyashree
-https://github.com/aahad91/Covid-19-Visual/tree/sayalee
-https://github.com/aahad91/Covid-19-Visual/tree/suganthi
+
     
 ### PARTICIPANTS
 We focussed to have equal participation of all the team members.
@@ -153,15 +161,19 @@ Tasks were fairly distributed and the below table depicts the responsibilities,
 | Participant                   | Concept                   | Visualization and Interaction              |
 | ------------------------------| --------------------------| -------------------------------------------|
 | **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation        |
-| **Bhagyashree Sanjay Borade** | Visualization Techniques  | Multi line series plot, Scatter plot       |
+| **Bhagyashree Sanjay Borade** | Visualization Techniques  | Multi line series plot, Scatter plot/Integration/Documentation|
 | **Sayalee Chavan**            | Interaction               | Bubble plot, Integration/Documentation     |
 | **Suganthi Jaganathan**       | User and Tasks            | Grouped Bar plot, Integration/Documentation|
 
 ### CONCEPT
-All the goals are met from the concept document.
-We followed the same visualization techniques and representations. However, there are meagre changes like,
+Most of the goals are met from the concept document.
+We followed the same visualization techniques and representations. 
+However, there are meagre changes like,
 - 3D plots have been changed to 2D plots for making it more pleasant and appealing
+- We faced isseues while integrating all visualization techniques so it does not exist in final version
+- We have added dropdown so that use select visulaization bases on age,county,population,time and gender in single platform.
 
-** Add-Ons **
+
+
 
 
