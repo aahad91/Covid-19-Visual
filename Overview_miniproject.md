@@ -119,28 +119,33 @@ Interaction for visualization techniques specified as following,
  For Bar Chart and Grouped Bar Chart, the user can select between Bar Chart and Grouped Bar Chart in dropdown. For Grouped Bar Chart, visualization can be customized by selecting checkboxes represents "No. of confirmed cases", "No. of recovered cases" and "No. of deaths". 
  For Scatter plot multi-series, User can customize the visualization by selecting the checkbox in legends based on gender(male/ female). For Bubble Chart, User can customize visualization by selecting the checkbox which consists of "Total confirmed cases", "No. of recovered cases", "No. of deaths" parameters.
  
--**Hover (Purpose : Distortion):** This interactive technique reveals detailed data point information by moving the mouse cursor over data value space which will be included in all visualization techniques mentioned above. For eg, hovering on scatter data points reveals information about no of cases represented by y-axis and age group represented by x-axis.
+-**Hover :** (Purpose : Distortion)This interactive technique reveals detailed data point information by moving the mouse cursor over data value space which will be included in all visualization techniques mentioned above. For eg, hovering on scatter data points reveals information about no of cases represented by y-axis and age group represented by x-axis.
 
 All the above interaction operators have been added to each and every individual component.
 
 #### Interaction Operands
-The operands are the data values or records mapped to the specific field such as County/Age_group.
+The operands are the data values or records mapped to a particular field such as County or Age_group. In all the represented visualizations, age_group is the interaction operand in bar graph and scatter plot, then county in grouped bar graph and bubble chart, and date in the multi line series.
 
 #### Interaction Space
-- Data value space : 
+
+- **Data value space**
+Data value space is utilized which is performed by the slider to highlight on specific data values.
+The categorical data will be highlighted on clicking the Legends (single or multiple is possible). Hover highlights data specific to x-axis.
 Purpose : To view a particular data range
-- Visualization Structure space:
+- **Visualization Structure space**
+Visualization Structure space is utilized which is again performed by the slider.
 Purpose : To Move or navigate
     
     
 ### LIBRARIES
 The following libraries were used,
-Pandas
-NumPy
-Plotly
-Matplotlib
+- Pandas
+- NumPy
+- Plotly
+- Matplotlib
 
 ### CODE REPOSITORIES
+Suggest, should I add the repo links or not?
 https://github.com/aahad91/Covid-19-Visual/tree/master
 https://github.com/aahad91/Covid-19-Visual/tree/ahad
 https://github.com/aahad91/Covid-19-Visual/tree/bhagyashree
@@ -148,17 +153,18 @@ https://github.com/aahad91/Covid-19-Visual/tree/sayalee
 https://github.com/aahad91/Covid-19-Visual/tree/suganthi
     
 ### PARTICIPANTS
+
 We focussed to have equal participation of all the team members.
 Tasks were fairly distributed and the below table depicts the responsibilities,
-| Participant                   | Concept                   | Visualization and Interaction              |
-| ------------------------------| --------------------------| -------------------------------------------|
-| **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation        |
-| **Bhagyashree Sanjay Borade** | Visualization Techniques  | Multi line series plot, Scatter plot       |
-| **Sayalee Chavan**            | Interaction               | Bubble plot, Integration/Documentation     |
-| **Suganthi Jaganathan**       | User and Tasks            | Grouped Bar plot, Integration/Documentation|
+| Participant                   | Concept                   | Visualization and Interaction                                  |
+| ------------------------------| --------------------------| ---------------------------------------------------------------|
+| **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation                            |
+| **Bhagyashree Sanjay Borade** | Visualization Techniques  | Multi line series plot, Scatter plot, Integration/Documentation|
+| **Sayalee Chavan**            | Interaction               | Bubble plot, Integration/Documentation                         |
+| **Suganthi Jaganathan**       | User and Tasks            | Grouped Bar plot, Integration/Documentation                    |
 
 ### CONCEPT
-All the goals are met from the concept document.
+We made sure that the goals framed for the initial concept have been covered completely.
 We followed the same visualization techniques and representations. However, there are meagre changes like,
 - 3D plots have been changed to 2D plots for making it more pleasant and appealing
 
