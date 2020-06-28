@@ -151,7 +151,6 @@ Purpose : To Move or navigate
     
     
 ### LIBRARIES
-<<<<<<< HEAD
 The following libraries were used:
 Pandas
 NumPy
@@ -166,20 +165,11 @@ The following libraries were used,
 - Plotly
 - Matplotlib
 
-### CODE REPOSITORIES
-Suggest, should I add the repo links or not?
-https://github.com/aahad91/Covid-19-Visual/tree/master
-https://github.com/aahad91/Covid-19-Visual/tree/ahad
-https://github.com/aahad91/Covid-19-Visual/tree/bhagyashree
-https://github.com/aahad91/Covid-19-Visual/tree/sayalee
-https://github.com/aahad91/Covid-19-Visual/tree/suganthi
->>>>>>> 1ced03149de2ea6e27088a1878ac2150009ec652
-    
+   
 ### PARTICIPANTS
 
 We focussed to have equal participation of all the team members.
 Tasks were fairly distributed and the below table depicts the responsibilities,
-<<<<<<< HEAD
 | Participant                   | Concept                   | Visualization and Interaction              |
 | ------------------------------| --------------------------| -------------------------------------------|
 | **Abdul Ahad Ayaz**           | Dataset                   | Bar plot, Integration/Documentation        |
