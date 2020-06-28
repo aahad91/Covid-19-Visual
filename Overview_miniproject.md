@@ -84,7 +84,7 @@ We have defined a set of visualization tasks from which the user could be benefi
 
 
 ### VISUALIZATION TECHNIQUES
-Data is preprocessed by polishing the data that could be transformed for representaion in various forms.
+Data is preprocessed by acquiring only the NRW state data and its relevant columns. The data was polished then (handling bad data )and is utilized for transformation and graphical representation .
 It will be visualized using various interactive visualization techniques to have a broader overview of correlation amongst data which will help to deduce significant information.
 
 ##### Techniques
