@@ -1,0 +1,2 @@
+com/test/coronavirus/CoronavirusApplicationTests.java
+ com.test.coronavirus.CoronavirusApplicationTests
