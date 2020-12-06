@@ -6,6 +6,7 @@ public class LocationStats {
     private String country;
     private int latestTotalCases;
     private int diffFromPrevDay;
+    private float percentDiff;
 
     public String getState() {
         return state;
@@ -43,6 +44,14 @@ public class LocationStats {
 
     public void setDiffFromPrevDay(int diffFromPrevDay) {
         this.diffFromPrevDay = diffFromPrevDay;
+    }
+
+    public float getPercentDiff() {
+        return percentDiff;
+    }
+
+    public void setPercentDiff(float percentDiff) {
+        this.percentDiff = percentDiff;
     }
 
     

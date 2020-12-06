@@ -44,8 +44,15 @@ public class CoronavirusDataService {
             locationStat.setCountry(record.get("Country/Region"));
             int latestCases = Integer.parseInt(record.get(record.size() - 1));
             int prevDayCases = Integer.parseInt(record.get(record.size() - 2));
+          //  int precentDiff = ((Integer.parseInt(record.get(record.size() - 1)) - Integer.parseInt(record.get(record.size() - 2))/Integer.parseInt(record.get(record.size() - 2)))*100;
             locationStat.setLatestTotalCases(latestCases);
             locationStat.setDiffFromPrevDay(latestCases - prevDayCases);
+            if (prevDayCases != 0) {
+                locationStat.setPercentDiff(((latestCases - prevDayCases) / prevDayCases)*100);
+            }
+            else {
+                locationStat.setPercentDiff(0);
+            }
             newStats.add(locationStat);
 
         }
